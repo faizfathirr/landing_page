@@ -1,0 +1,7 @@
+import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { profile, whatsappUrl } from "@/data/profile";
+import Reveal from "./Reveal";
+
+export default function Contact() {
+  return <section id="contact" className="scroll-mt-24 px-6 py-24 lg:px-8"><Reveal><div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-emerald-300/20 bg-gradient-to-br from-emerald-950/80 via-slate-900 to-cyan-950/50 px-6 py-16 text-center sm:px-12"><div className="blob -right-16 -top-24 h-64 w-64 bg-emerald-400 opacity-20" /><p className="relative mb-4 text-sm font-semibold uppercase tracking-[.2em] text-emerald-300">03 — Mari terhubung</p><h2 className="relative mx-auto max-w-2xl text-3xl font-bold text-white sm:text-5xl">Punya ide? Mari <span className="text-emerald-300">wujudkan</span> bersama.</h2><p className="relative mx-auto mt-5 max-w-xl text-sm leading-7 text-slate-300">Saya selalu terbuka untuk berdiskusi tentang proyek, kolaborasi, atau sekadar bertukar cerita seputar teknologi.</p><a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="whatsapp-glow relative mt-9 inline-flex items-center gap-3 rounded-2xl bg-[#25D366] px-6 py-4 text-sm font-bold text-[#062b14] transition hover:-translate-y-1 hover:bg-[#55e483]"><MessageCircle fill="currentColor" /> Hubungi Saya via WhatsApp <ArrowUpRight size={18} /></a><p className="relative mt-4 text-xs text-slate-500">Pesan akan dibuka di tab baru untuk {profile.name}</p></div></Reveal></section>;
+}

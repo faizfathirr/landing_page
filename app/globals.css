@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root { --charcoal: #1E1E1C; --sand: #D8CBB3; --electric-blue: #2F6BFF; --background: #1E1E1C; --foreground: #D8CBB3; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--background); color: var(--foreground); font-family: var(--font-jakarta), sans-serif; }
+::selection { background: var(--electric-blue); color: white; }
+.site-grid { background-image: linear-gradient(rgba(216,203,179,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(216,203,179,.07) 1px, transparent 1px); background-size: 64px 64px; }
+.glass { background: rgba(30, 30, 28, .72); border: 1px solid rgba(216,203,179,.16); backdrop-filter: blur(18px); }
+.gradient-text { background: linear-gradient(100deg, var(--sand), var(--electric-blue) 75%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.blob { position: absolute; border-radius: 999px; filter: blur(80px); opacity: .24; pointer-events: none; }
+@keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-12px) } }
+.float { animation: float 6s ease-in-out infinite; }
+@keyframes pulseGlow { 0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,.12), 0 0 24px rgba(37,211,102,.22) } 50% { box-shadow: 0 0 0 10px rgba(37,211,102,0), 0 0 42px rgba(37,211,102,.42) } }
+.whatsapp-glow { animation: pulseGlow 2.5s ease-in-out infinite; }
+.light body { --background: #f5f7ff; --foreground: #172033; background: var(--background); color: var(--foreground); }
+.light .site-grid { background-image: linear-gradient(rgba(30,41,59,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(30,41,59,.06) 1px, transparent 1px); }
+.light .glass { background: rgba(255,255,255,.68); border-color: rgba(30,41,59,.1); }
+.light .gradient-text { background: linear-gradient(100deg, #c4b5fd, #67e8f9 75%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.light .text-white { color: #172033; }
+.light .text-slate-200 { color: #334155; }
+.light .text-slate-300 { color: #475569; }
+.light .text-slate-400 { color: #64748b; }
+
+/* Aksen referensi: charcoal, sand, dan electric blue. */
+:root:not(.light) .text-cyan-300, :root:not(.light) .text-cyan-200, :root:not(.light) .text-purple-300, :root:not(.light) .text-purple-200, :root:not(.light) .text-emerald-300 { color: var(--electric-blue) !important; }
+:root:not(.light) .bg-purple-600, :root:not(.light) .bg-cyan-500, :root:not(.light) .bg-emerald-400 { background-color: var(--electric-blue) !important; }
+:root:not(.light) .from-purple-500, :root:not(.light) .from-purple-400 { --tw-gradient-from: var(--electric-blue) var(--tw-gradient-from-position); }
+:root:not(.light) .via-blue-500 { --tw-gradient-via: var(--electric-blue) var(--tw-gradient-via-position); }
+:root:not(.light) .to-cyan-400, :root:not(.light) .to-cyan-300 { --tw-gradient-to: var(--electric-blue) var(--tw-gradient-to-position); }
+:root:not(.light) .border-cyan-300\/30, :root:not(.light) .border-cyan-300\/40, :root:not(.light) .border-purple-300\/30 { border-color: color-mix(in srgb, var(--electric-blue) 45%, transparent) !important; }
+:root:not(.light) .hover\\:text-cyan-300:hover, :root:not(.light) .hover\\:text-cyan-200:hover { color: var(--electric-blue) !important; }
+
+/* Kontras komponen gelap saat mode terang aktif. */
+.light [class*="bg-slate-900/80"] .text-white,
+.light [class*="bg-slate-900/70"] .text-white,
+.light #contact .text-white { color: #f8fafc !important; }
+.light [class*="bg-slate-900/80"] .text-slate-400,
+.light [class*="bg-slate-900/70"] .text-slate-400,
+.light #contact .text-slate-300,
+.light #contact .text-slate-500 { color: #cbd5e1 !important; }
+
